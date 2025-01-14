@@ -1,2 +1,2 @@
 # portfolio
-I share here my projects and data insights.
+I share here my projects and valuable data insights..
