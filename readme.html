@@ -93,7 +93,8 @@
                 if (data.content) {
                     // Decode and display README content
                     const decodedContent = atob(data.content);
-                    document.getElementById('readme-content').innerHTML = `<pre>${decodedContent}</pre>`;
+			
+                    document.getElementById('readme-content').innerHTML = decodedContent;
                 } else {
                     document.getElementById('readme-content').textContent = 'README not found.';
                 }
