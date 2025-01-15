@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        pre {
+            background-color: #f4f4f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>README Viewer</h1>
+    </header>
+
+    <div class="container">
+        <p id="repo-name"></p>
+        <div id="readme-content">Loading README...</div>
+    </div>
+
+    <script>
+        // Get the repository name from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const repo = urlParams.get('repo');
+
+        // Display repository name
+        const repoNameElement = document.getElementById('repo-name');
+        repoNameElement.textContent = `Repository: ${repo}`;
+
+        // Fetch the README file from the GitHub API
+        const apiUrl = `https://api.github.com/repos/your-username/${repo}/contents/README.md`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.content) {
+                    // Decode and display README content
+                    const decodedContent = atob(data.content);
+                    document.getElementById('readme-content').innerHTML = `<pre>${decodedContent}</pre>`;
+                } else {
+                    document.getElementById('readme-content').textContent = 'README not found.';
+                }
+            })
+            .catch(error => {
+                document.getElementById('readme-content').textContent = 'Error loading README.';
+                console.error(error);
+            });
+    </script>
+</body>
+</html>
