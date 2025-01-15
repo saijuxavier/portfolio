@@ -112,29 +112,9 @@
     </footer>
 
      <script>
-    function navigateToReadme(repo)
-        {
+            function navigateToReadme(repo) {
             // Redirect to the new page with the repository name as a query parameter
-            window.location.href = `readme.html?repo=${encodeURIComponent(repo)}`;
-        
-            const readmeContent = document.getElementById('readme-content');  // 1
-            const apiUrl = `https://api.github.com/repos/${repo}/contents/README.md`;  // 2
-        
-            fetch(apiUrl)  // 3
-                .then(response => response.json())  // 4
-                .then(data => {  // 5
-                    if (data.content) {  // 6
-                        // Decode the base64 content
-                        const decodedContent = atob(data.content);  // 7
-                        readmeContent.innerHTML = `<pre>${decodedContent}</pre>`;  // 8
-                    } else {
-                        readmeContent.innerHTML = `<p>data not found for ${repo}</p>`;  // 9
-                    }
-                })
-                .catch(error => {  // 10
-                    readmeContent.innerHTML = `<p>Unable to load data</p>`;  // 11
-                    console.error(error);  // 12
-                });
+                window.location.href = `readme.html?repo=${encodeURIComponent(repo)}`;
         }
 
     </script>
