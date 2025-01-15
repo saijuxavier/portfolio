@@ -122,13 +122,13 @@
             if (data.content) {  // 6
                 // Decode the base64 content
                 const decodedContent = atob(data.content);  // 7
-                readmeContent.innerHTML = `<h3>README for ${repo}</h3><pre>${decodedContent}</pre>`;  // 8
+                readmeContent.innerHTML = `<pre>${decodedContent}</pre>`;  // 8
             } else {
-                readmeContent.innerHTML = `<p>README not found for ${repo}</p>`;  // 9
+                readmeContent.innerHTML = `<p>data not found for ${repo}</p>`;  // 9
             }
         })
         .catch(error => {  // 10
-            readmeContent.innerHTML = `<p>Unable to load README for ${repo}</p>`;  // 11
+            readmeContent.innerHTML = `<p>Unable to load data</p>`;  // 11
             console.error(error);  // 12
         });
 }
