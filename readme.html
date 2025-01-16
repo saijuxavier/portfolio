@@ -76,32 +76,7 @@
     </div>
    
    <script>
-        // Extract the 'repo' parameter from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const repo = urlParams.get('repo'); // Replace this with your logic for repo/file paths
-
-        if (repo) {
-            // Construct the raw URL to fetch the README.md file from GitHub
-            const rawMdUrl = `https://raw.githubusercontent.com/${repo}/main/README.md`; // Adjust the branch/path if needed
-
-            // Fetch the README.md file
-            fetch(rawMdUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error(`Failed to load README.md: ${response.status}`);
-                    return response.text();
-                })
-                .then(mdContent => {
-                    // Parse the Markdown into HTML and render it
-                    const htmlContent = marked.parse(mdContent);
-                    document.getElementById('readme-content').innerHTML = htmlContent;
-                })
-                .catch(error => {
-                    console.error(error);
-                    document.getElementById('readme-content').textContent = 'Error loading README.md file.';
-                });
-        } else {
-            document.getElementById('readme-content').textContent = 'No repository specified.';
-        }
+       <img src="istockphoto-1311598658-612x612.jpg" alt="Project 1">
 
     </script>
     <footer>
