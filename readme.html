@@ -75,39 +75,34 @@
         <div id="readme-content">Loading README...</div>
     </div>
    
-
-    <script>
-        // Get the repository name from the query parameter
+   <script>
+        // Extract the 'repo' parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
-        const repo = urlParams.get('repo');
+        const repo = urlParams.get('repo'); // Replace this with your logic for repo/file paths
 
-        // Display repository name
-        const repoNameElement = document.getElementById('repo-name');
-        repoNameElement.textContent = `Repository: ${repo}`;
-	    
+        if (repo) {
+            // Construct the raw URL to fetch the README.md file from GitHub
+            const rawMdUrl = `https://raw.githubusercontent.com/${repo}/main/README.md`; // Adjust the branch/path if needed
 
-        // Fetch the README file from the GitHub API
-        const apiUrl = `https://api.github.com/repos/${repo}/contents/README.md`;
-	    
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.content) {
-                    // Decode and display README content
-                    const decodedContent = atob(data.content);
-		    const htmlContent = marked(decodedContent); // Convert Markdown to HTML
+            // Fetch the README.md file
+            fetch(rawMdUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load README.md: ${response.status}`);
+                    return response.text();
+                })
+                .then(mdContent => {
+                    // Parse the Markdown into HTML and render it
+                    const htmlContent = marked.parse(mdContent);
                     document.getElementById('readme-content').innerHTML = htmlContent;
-			
-                } else {
-                    document.getElementById('readme-content').textContent = 'README not found.';
-                }
-            })
-            .catch(error => {
-                document.getElementById('readme-content').textContent = 'Error loading README.';
-                console.error(error);
-            });
-    
+                })
+                .catch(error => {
+                    console.error(error);
+                    document.getElementById('readme-content').textContent = 'Error loading README.md file.';
+                });
+        } else {
+            document.getElementById('readme-content').textContent = 'No repository specified.';
+        }
+
     </script>
     <footer>
         <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
