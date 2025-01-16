@@ -84,9 +84,11 @@
         // Display repository name
         const repoNameElement = document.getElementById('repo-name');
         repoNameElement.textContent = `Repository: ${repo}`;
+	    
 
         // Fetch the README file from the GitHub API
         const apiUrl = `https://api.github.com/repos/${repo}/contents/README.md`;
+	    
 
         fetch(apiUrl)
             .then(response => response.json())
