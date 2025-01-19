@@ -75,7 +75,7 @@
     <div class="container">
         <section class="projects">
             <!-- Project Tile 1 -->
-            <div class="project-tile" onclick="navigateToReadme('saijuxavier/portfolio')">
+            <div class="project-tile" onclick="window.location.href='readme.html'">
                 <img src="istockphoto-1311598658-612x612.jpg" alt="Project 1">
                 <h2>Project Title 1</h2>
                 <p>A brief description of your project goes here. Highlight the key features or purpose.</p>
@@ -107,12 +107,5 @@
         <p>Follow me on <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
     </footer>
 
-     <script>
-            function navigateToReadme(repo) {
-            // Redirect to the new page with the repository name as a query parameter
-                window.location.href = `readme.md?repo=${encodeURIComponent(repo)}`;
-        }
-
-    </script>
 </body>
 </html>
