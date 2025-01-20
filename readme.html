@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <title>README Viewer</title>
+    <title>Project Showcase</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,8 +11,8 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
-	    
-        }
+            overflow: hidden;
+            }
         header {
             text-align: center;
             padding: 20px;
@@ -39,6 +38,7 @@
             width: 300px;
             padding: 20px;
             text-align: center;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
         .project-tile:hover {
@@ -48,12 +48,18 @@
             max-width: 100%;
             border-radius: 8px;
         }
-        footer {
+        footer 
+        {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 10px 0px 10px;
-            margin-top:300px;
+            padding: 5px;
+            margin-top: 10px;
+ 	    
+	   	
+
+		
+            
         }
         footer a {
             color: #4CAF50;
@@ -62,22 +68,49 @@
         footer a:hover {
             text-decoration: underline;
         }
-
+       
     </style>
 </head>
 <body>
     <header>
-        <h1>README Viewer</h1>
+        <h1>SUPPLY CHAIN ANALYTICS</h1>
+        <p>Explore my latest projects and get in touch!</p>
     </header>
 
     <div class="container">
-       <p>repo-name</p>
-   	<img src="istockphoto-1311598658-612x612.jpg" alt="Project 1">
+        <section class="projects">
+            <!-- Project Tile 1 -->
+            <div class="project-tile" onclick="window.location.href='readme.html'">
+                <img src="global-communication-background-business-network-vector-design_53876-151122.avif" alt="Project 1">
+                <h2>NETWORK DESIGN</h2>
+                <p>A warehouse network design strategically integrates layout, workflows, and technology to optimize storage, movement, and communication across the facility.</p>
+            </div>
 
+            <!-- Project Tile 2 -->
+            <div class="project-tile" onclick="showReadme('portfolio2')">
+                <img src="1_EbD9RvgZWx23U3S5OMbEXA.jpg" alt="Project 2">
+                <h2>FMCD DASHBOARD</h2>
+                <p>An FMCD dashboard provides real-time insights and analytics to track performance, inventory, and operations in the fast-moving consumer durables sector.</p>
+            </div>
+
+            <!-- Project Tile 3 -->
+            <div class="project-tile" onclick="showReadme('your-github-username/portfolio3')">
+                <img src="27095-tech-driven-truck-aggregators-are-game-changers-in-transport-industry-raaho.jpg" alt="Project 3">
+                <h2>PTL SHIPPING</h2>
+                <p>A PTL dashboard visualizes key transportation data, enabling quick decision-making and efficient tracking of delivery performance and fleet operations.</p>
+            </div>
+        </section>
+
+        <!-- README Content Display -->
+        <div id="readme-content">
+            <!-- README content will be shown here -->
+        </div>
     </div>
+
     <footer>
-    	 <p>Contact me at: <a href="mailto:saijuxavier20@gmail.com">saijuxavier20@gmail.com</a></p>
-	<p>Follow me on <a href="https://www.linkedin.com/in/saiju-xavier/">LinkedIn</a></p>
+        <p>Contact me at: <a href="mailto:saijuxavier20@gmail.com">saijuxavier20@gmail.com</p>
+        <p>Follow me on <a href="https://www.linkedin.com/in/saiju-xavier/">LinkedIn</a></p>
     </footer>
+
 </body>
 </html>
