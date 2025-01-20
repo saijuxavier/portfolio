@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTL Operations - TVM Drop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+        .box {
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            flex: 1 1 calc(50% - 40px);
+        }
+        .box h2 {
+            margin-top: 0;
+            color: #004080;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        table th {
+            background-color: #004080;
+            color: white;
+        }
+        .insights {
+            background-color: #e8f4ff;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            flex: 1 1 100%;
+        }
+        .insights h2 {
+            color: #004080;
+        }
+        .insights p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PTL Operations - TVM Drop</h1>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <h2>Problem Statement</h2>
+            <p>The PTL operations in TVM Drop are facing inefficiencies in closing open cases within acceptable turnaround times (TATs) across various metrics such as Hub Arrived vs Dispatch TAT, POD TAT, and IOD TAT. This requires focused analysis to identify bottlenecks and streamline operations to achieve faster case closures and improved operational efficiency.</p>
+    
+  </div>
+        <img src="image (5).png" width=2000px>
+  
+        <div class="insights">
+            <h2>Insights</h2>
+            <p><strong>1. Hub Arrived vs Dispatch TAT:</strong> The majority of operations are completed within 1 day (30 closed cases), but 11 cases remain open. This suggests that although performance is strong, reducing open cases should be a priority.</p>
+            <p><strong>2. LR Status:</strong> Out of 43 total cases, 32 are closed and 11 are open, leading to an open rate of 25%. This highlights a need for better tracking and resolution processes for open cases.</p>
+            <p><strong>3. POD TAT:</strong> Most PODs are processed within 2 days (27 closed cases). However, there are 5 open cases, indicating room for improvement in POD processing efficiency.</p>
+            <p><strong>4. IOD TAT:</strong> While 29 cases are closed within 1 day, delays in the remaining cases (up to 3 days) suggest inefficiencies in handling certain tasks.</p>
+            <p><strong>5. IOD TAT vs POD TAT:</strong> Discrepancies in TATs beyond 1 day reveal coordination challenges between IOD and POD teams. Addressing these will improve overall efficiency.</p>
+        </div>
+
+        <div class="box">
+            <h2>Recommendations</h2>
+            <p><strong>1. Implement Real-Time Tracking:</strong> Use digital tools to monitor open cases and their statuses, ensuring quick intervention when delays occur.</p>
+            <p><strong>2. Enhance Coordination:</strong> Improve communication between IOD and POD teams to minimize discrepancies in turnaround times.</p>
+            <p><strong>3. Root Cause Analysis:</strong> Identify reasons for delays in cases exceeding the standard TAT and address bottlenecks in processes.</p>
+            <p><strong>4. Training and Awareness:</strong> Train staff on the importance of timely updates and closures to reduce open case percentages.</p>
+        </div>
+    </div>
+</body>
+</html>
