@@ -3,113 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Showcase</title>
+    <title>Delivery SLA Dashboard Insights</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            overflow: hidden;
-            }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #4CAF50;
-            color: white;
+            margin: 20px;
+            background-color: #f4f4f4;
         }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .project-tile {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .project-tile:hover {
-            transform: translateY(-5px);
-        }
-        .project-tile img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-        footer 
-        {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 5px;
-            margin-top: 10px;
- 	    
-	   	
 
-		
-            
+        h1 {
+            color: #333;
+            text-align: center;
         }
-        footer a {
-            color: #4CAF50;
-            text-decoration: none;
+
+        h2 {
+            color: #444;
         }
-        footer a:hover {
-            text-decoration: underline;
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+		background-color: #e9f5e9;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-       
+
+        .problem-statement,
+        .insights,
+        .solutions {
+            margin-bottom: 30px;
+        }
+
+        .insights ul,
+        .solutions ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        .solutions ul li {
+            margin-bottom: 10px;
+        }
+
+        .actionable-insights {
+            background-color: #e9f5e9;
+            border-left: 5px solid #4CAF50;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>SUPPLY CHAIN ANALYTICS</h1>
-        <p>Explore my latest projects and get in touch!</p>
-    </header>
 
     <div class="container">
-        <section class="projects">
-            <!-- Project Tile 1 -->
-            <div class="project-tile" onclick="window.location.href='readme.html'">
-                <img src="global-communication-background-business-network-vector-design_53876-151122.avif" alt="Project 1">
-                <h2>NETWORK DESIGN</h2>
-                <p>A warehouse network design strategically integrates layout, workflows, and technology to optimize storage, movement, and communication across the facility.</p>
-            </div>
+        <h1><u>Delivery SLA Dashboard Insights</u></h1>
 
-            <!-- Project Tile 2 -->
-            <div class="project-tile" onclick="showReadme('portfolio2')">
-                <img src="1_EbD9RvgZWx23U3S5OMbEXA.jpg" alt="Project 2">
-                <h2>FMCD DASHBOARD</h2>
-                <p>An FMCD dashboard provides real-time insights and analytics to track performance, inventory, and operations in the fast-moving consumer durables sector.</p>
-            </div>
+        <div class="problem-statement">
+            <h2>Problem Statement</h2>
+            <p>The objective of this analysis is to identify key delivery routes that are causing SLA breaches and propose solutions for improving delivery timeliness.</p>
+            <ul>
+                <li><strong>Inefficient Deliveries:</strong> SLA breaches across specific routes affecting timely deliveries.</li>
+                <li><strong>Underperformance on Certain Routes:</strong> Certain routes have a higher breach rate, indicating inefficiencies or delays.</li>
+                <li><strong>Delivery Timeliness:</strong> A significant portion of deliveries are failing to meet SLA, resulting in customer dissatisfaction.</li>
+            </ul>
 
-            <!-- Project Tile 3 -->
-            <div class="project-tile" onclick="showReadme('your-github-username/portfolio3')">
-                <img src="27095-tech-driven-truck-aggregators-are-game-changers-in-transport-industry-raaho.jpg" alt="Project 3">
-                <h2>PTL SHIPPING</h2>
-                <p>A PTL dashboard visualizes key transportation data, enabling quick decision-making and efficient tracking of delivery performance and fleet operations.</p>
-            </div>
-        </section>
+        </div>
 
-        <!-- README Content Display -->
-        <div id="readme-content">
-            <!-- README content will be shown here -->
+        <div class="insights">
+            <h2>Key Data Insights</h2>
+            <ul>
+                <li><strong>Volume Breakdown:</strong> Same Day deliveries make up the majority of orders, with 746 deliveries out of 1084.</li>
+                <li><strong>SLA Achievement:</strong> Route 1 and 3 have an achievement rate of 83%, while Route 2, 4, 5, and 6 have a better performance at 94% SLA achievement.</li>
+                <li><strong>Breaches Analysis:</strong> Route 1 and 3 have a significant SLA breach count (218 breaches), indicating areas for improvement.</li>
+                <li><strong>Time-based Analysis:</strong> A high volume of Same Day deliveries needs optimization in the delivery process for improved SLA achievement.</li>
+            </ul>
+	 	<img src="" alt="Dashboard" width="1100" height="400">
+        </div>
+
+        <div class="solutions">
+            <h2>Actionable Insights and Solutions</h2>
+            <div class="actionable-insights">
+                <h3>1. Route 1 and 3 Improvement:</h3>
+                <ul>
+                    <li>Investigate delays or inefficiencies on these routes. Optimize routing and increase fleet capacity for better performance.</li>
+                    <li>Consider using real-time tracking to identify bottlenecks during delivery hours.</li>
+                </ul>
+            </div>
+            <div class="actionable-insights">
+                <h3>2. Focus on Same-Day Deliveries:</h3>
+                <ul>
+                    <li>Increase operational efficiency to handle the largest volume of Same Day deliveries.</li>
+                    <li>Optimize last-mile delivery and consider additional resources during peak times.</li>
+                </ul>
+            </div>
+            <div class="actionable-insights">
+                <h3>3. Reduce Minor SLA Breaches in Route 2, 4, 5, and 6:</h3>
+                <ul>
+                    <li>Monitor and address the small percentage (6%) of breaches to enhance overall performance.</li>
+                    <li>Focus on timing patterns and improve traffic management for smoother deliveries.</li>
+                </ul>
+            </div>
+            <div class="actionable-insights">
+                <h3>4. Analyze Delivery Volumes:</h3>
+                <ul>
+                    <li>Given the high volume of Same Day deliveries, explore strategies for peak time delivery optimization.</li>
+                    <li>Scale operations during busy periods to meet customer expectations.</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>Contact me at: <a href="mailto:saijuxavier20@gmail.com">saijuxavier20@gmail.com</p>
-        <p>Follow me on <a href="https://www.linkedin.com/in/saiju-xavier/">LinkedIn</a></p>
+        <p>Created by Saiju Xavier | Contact: saijuxavier20@gmail.com</p>
     </footer>
 
 </body>
